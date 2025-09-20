@@ -1,0 +1,52 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+
+.container {
+  perspective: 250px;
+  width: 300px;
+  height: 150px;
+  position: relative;
+}
+
+.tarjeta {
+  width: 50px;
+  height: 80px;
+  background-color: #442222;
+  font-size: 40px;
+  position: absolute;
+  top: 35px;
+  left: 125px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  animation: Carrusel 8s linear infinite;
+  background-size: cover;
+}
+
+@keyframes Carrusel {
+  from {
+    transform: rotateY(360deg) translateZ(100px);
+    z-index: 10;
+    opacity: 0.9;
+  }
+  50% {
+    z-index: -10;
+  }
+  to {
+    transform: rotateX(0deg) translateZ(100px) rotateX(0deg);
+    z-index: 10;
+  }
+}
+
+.tarjeta h3 {
+  color: white;
+  font-size: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 70px;
+  background-color: #ff0000;
+}
